@@ -1,0 +1,44 @@
+---
+title: "Trustless Architecture"
+description: "Design principles that keep USB.Trade non-custodial by default"
+---
+
+<div className="usb-section">
+  <h2>Design goals to reinforce</h2>
+  <ul className="usb-checklist">
+    <li>User retains custody at every step.</li>
+    <li>Off-chain services are provably correct or fully optional.</li>
+    <li>Governance and upgrades are transparent, with clear checkpoints.</li>
+  </ul>
+</div>
+
+<div className="usb-section">
+  <h2>Layers of the stack</h2>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">On-chain smart contracts</span>
+      <p className="usb-card__body">Outline control flow, collateral accounting, and fail-safe mechanisms.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Proof layer (Risc0 Boundless Network)</span>
+      <p className="usb-card__body">Describe what is proven, how frequently, and how proofs are verified.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Sequencing layer (MaldaLab ASMS)</span>
+      <p className="usb-card__body">Clarify ordering guarantees, liveness assumptions, and interoperability story.</p>
+    </div>
+  </div>
+  :::note Graphic cue
+  Layered architecture diagram: user wallets at the top, USB.Trade contracts, Risc0 prover network, MaldaLab sequencer, connected chains.
+  :::
+</div>
+
+<div className="usb-section">
+  <h2>Questions to answer with the engineering team</h2>
+  <ul className="usb-checklist">
+    <li>Which operations require Risc0 proofs vs. native chain validation?</li>
+    <li>What happens during partial outages (sequencer downtime, prover delays)?</li>
+    <li>How should users verify trust assumptions themselves (dashboards, open-source repos, audits)?</li>
+  </ul>
+  <p>Document links to whitepapers, audits, and technical blog posts when they become available.</p>
+</div>

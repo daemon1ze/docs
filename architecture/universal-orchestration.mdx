@@ -1,0 +1,38 @@
+---
+title: "Universal Orchestration"
+description: "Coordinating cross-chain borrowing and margin flows"
+---
+
+<div className="usb-section">
+  <h2>What orchestration solves</h2>
+  <ul className="usb-checklist">
+    <li>Define the problem traders face when juggling borrow venues manually.</li>
+    <li>Outline how USB.Trade abstracts rate shopping, approvals, and settlement.</li>
+    <li>Clarify trust assumptions and transparency expectations for orchestrated actions.</li>
+  </ul>
+  :::note Graphic cue
+  Dynamic animation showing USB.Trade evaluating lending rates across chains, selecting the best route, and executing the borrow + margin move.
+  :::
+</div>
+
+<div className="usb-section">
+  <h2>Core capabilities to describe</h2>
+  <ol>
+    <li><strong>Market discovery engine</strong> – how rate data is sourced, refreshed, and ranked.</li>
+    <li><strong>Intent translation</strong> – how a user’s deposit or rebalance request is converted into multi-step transactions.</li>
+    <li><strong>Execution coordinator</strong> – sequencing swaps, bridges, borrows, and margin updates across chains.</li>
+    <li><strong>Verification + receipts</strong> – providing post-trade proof (on-chain events, Risc0 attestations, dashboards).</li>
+  </ol>
+  <p>Leave room to plug in examples for ETH, stables, and long-tail assets once routes are finalized.</p>
+</div>
+
+<div className="usb-section">
+  <h2>Operational considerations</h2>
+  <ul className="usb-checklist">
+    <li>Latency expectations per chain / venue.</li>
+    <li>Failover paths when a selected venue becomes unavailable mid-flight.</li>
+    <li>Fee structure (protocol share vs. pass-through gas / bridge costs).</li>
+    <li>Governance hooks for adding / removing supported venues.</li>
+  </ul>
+  <p>Collect engineering references, API docs, or flowcharts here as they are produced.</p>
+</div>

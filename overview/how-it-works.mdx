@@ -1,0 +1,46 @@
+---
+title: "How USB.Trade Works"
+description: "High-level flow from deposit to automated risk management"
+---
+
+<div className="usb-section">
+  <h2>End-to-end flow</h2>
+  <ol>
+    <li><strong>User plugs in collateral</strong> – outline supported networks, wallet UX, and collateral checks.</li>
+    <li><strong>USB.Trade routes to best borrow</strong> – explain the on-chain scanning + routing logic at a conceptual level.</li>
+    <li><strong>Margin account funds perps / prediction positions</strong> – show the unified margin wallet concept.</li>
+    <li><strong>Automation keeps positions safe</strong> – summarize triggers, rebalancing, and guardrails.</li>
+  </ol>
+  :::note Graphic cue
+  Flow diagram from "Collateral Asset" → "Universal Connector" → "Lending Venue" + "Perp Venue" with feedback loops for monitoring.
+  :::
+</div>
+
+<div className="usb-section">
+  <h2>Components to describe</h2>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Universal connector layer</span>
+      <p className="usb-card__body">How USB discovers and interacts with lending protocols (list them as placeholders).</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Smart margin account</span>
+      <p className="usb-card__body">Define what lives fully on-chain versus in the prover / sequencer layer.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Automation engine</span>
+      <p className="usb-card__body">Map key jobs (health monitoring, margin transfers, liquidation prevention).</p>
+    </div>
+  </div>
+  <p>Flag any touchpoints with partner protocols or required approvals (e.g., governance votes, whitelists).</p>
+</div>
+
+<div className="usb-section">
+  <h2>Open questions for the team</h2>
+  <ul className="usb-checklist">
+    <li>What data sources feed rate discovery and risk scores?</li>
+    <li>Which interactions are synchronous vs. asynchronous from the user’s perspective?</li>
+    <li>How should we communicate fees and revenue flows at this level of depth?</li>
+  </ul>
+  <p>Capture answers here or link out to deeper technical appendices once they exist.</p>
+</div>

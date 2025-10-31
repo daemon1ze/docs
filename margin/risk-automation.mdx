@@ -1,0 +1,48 @@
+---
+title: "Risk Automation"
+description: "How USB.Trade keeps spot borrow positions healthy"
+---
+
+<div className="usb-section">
+  <h2>Goals for this section</h2>
+  <ul className="usb-checklist">
+    <li>Explain what risks USB.Trade automates away for traders.</li>
+    <li>Show how proactive actions (rebalancing, hedging, collateral moves) are triggered.</li>
+    <li>Highlight what remains under the trader’s control.</li>
+  </ul>
+</div>
+
+<div className="usb-section">
+  <h2>Automation toolkit (outline each module)</h2>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Health Monitor</span>
+      <p className="usb-card__body">[Placeholder for alert thresholds + notification channels]</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Margin Shifter</span>
+      <p className="usb-card__body">[Placeholder for how collateral moves between perps and borrow positions]</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Borrow Optimizer</span>
+      <p className="usb-card__body">[Placeholder for re-shopping rates across lending venues]</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Failsafe Actions</span>
+      <p className="usb-card__body">[Placeholder for last-resort deleveraging / insurance mechanisms]</p>
+    </div>
+  </div>
+  :::note Graphic cue
+  Timeline graphic showing warning → automated transfer → confirmation → post-mortem report.
+  :::
+</div>
+
+<div className="usb-section">
+  <h2>Configuration surface area</h2>
+  <ul className="usb-checklist">
+    <li>Default vs. advanced settings (who can opt in / out, DAO policy levers).</li>
+    <li>Partner / institutional controls (multi-sig approvals, observability dashboards).</li>
+    <li>Auditability requirements (reporting, receipts, provable automation logs).</li>
+  </ul>
+  <p>List unresolved questions or dependencies (e.g., oracle providers, MEV protection, notification partners).</p>
+</div>
