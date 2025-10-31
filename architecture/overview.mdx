@@ -1,0 +1,41 @@
+---
+title: "Architecture Overview"
+description: "How the core USB.Trade components fit together"
+---
+
+<div className="usb-section">
+  <h2>System layers</h2>
+  <p>
+    USB.Trade is composed of modular services that snap together like the ports on the physical USB standard. Each layer is independently upgradeable, auditable, and replaceable, yet they operate in concert to deliver a seamless margin experience.
+  </p>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Smart margin accounts</span>
+      <p className="usb-card__body">Non-custodial vaults that unify collateral, lending, and risk policies across chains.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Universal orchestration</span>
+      <p className="usb-card__body">Intent-aware router that sequences swaps, bridges, borrows, and repayments for optimal funding.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Automation engine</span>
+      <p className="usb-card__body">Monitoring and policy enforcement layer that keeps utilization and exposure within guardrails.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Proof & sequencing layer</span>
+      <p className="usb-card__body">Risc0-bound proofs and MaldaLab sequencing ensure every automated action is verifiable.</p>
+    </div>
+  </div>
+</div>
+
+<div className="usb-section">
+  <h2>Design tenets</h2>
+  <ol>
+    <li><strong>Composable interfaces.</strong> Every layer exposes APIs and events so partners can integrate or substitute modules.</li>
+    <li><strong>Deterministic automation.</strong> Decisions are reproducible from public data and programmable policies.</li>
+    <li><strong>Progressive decentralization.</strong> More controls migrate on-chain as cryptography, governance, and partner readiness mature.</li>
+  </ol>
+  <p>
+    The pages in this section dive deeper into each layer—how they are built today, the roadmap for hardening them, and the integration considerations for external developers.
+  </p>
+</div>

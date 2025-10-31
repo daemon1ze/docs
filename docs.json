@@ -4,8 +4,8 @@
   "name": "USB.Trade Docs",
   "colors": {
     "primary": "#2E5CFF",
-    "light": "#00FF7F",
-    "dark": "#1B2E6F"
+    "light": "#24E5A5",
+    "dark": "#0C1A3D"
   },
   "stylesheets": [
     "styles.css"
@@ -20,23 +20,33 @@
             "group": "Introduction",
             "pages": [
               "index",
-              "overview/why-usb",
-              "overview/how-it-works"
+              "introduction/product"
             ]
           },
           {
-            "group": "Margin Engine",
+            "group": "User Journey",
             "pages": [
-              "margin/margin-accounts",
-              "margin/risk-automation"
+              "user-journey/overview",
+              "user-journey/onboarding",
+              "user-journey/funding",
+              "user-journey/setting-up-automations",
+              "user-journey/repay-withdraw"
             ]
           },
           {
-            "group": "Trustless Architecture",
+            "group": "Technical Architecture",
             "pages": [
-              "architecture/trustless-architecture",
+              "architecture/overview",
               "architecture/universal-orchestration",
-              "architecture/risc0-malda"
+              "architecture/smart-margin-accounts",
+              "architecture/automation-engine",
+              "architecture/proof-layer"
+            ]
+          },
+          {
+            "group": "About Us",
+            "pages": [
+              "about"
             ]
           },
           {

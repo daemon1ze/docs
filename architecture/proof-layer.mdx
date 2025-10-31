@@ -1,0 +1,48 @@
+---
+title: "Proof & Sequencing Layer"
+description: "Risc0 attestations and MaldaLab orchestration guarantees"
+---
+
+<div className="usb-section">
+  <h2>Why it exists</h2>
+  <p>
+    Automation only works if every participant can trust the results. USB.Trade combines Risc0’s Boundless Network for zero-knowledge proofs with MaldaLab’s sequencer technology to validate that automation modules followed policy, touched approved venues, and settled in the right order.
+  </p>
+  <p>
+    Users stay in custody while gaining cryptographic assurance that orchestration decisions were executed faithfully—even when they span multiple chains.
+  </p>
+</div>
+
+<div className="usb-section">
+  <h2>How the layer is assembled</h2>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Execution trace capture</span>
+      <p className="usb-card__body">Automation actions are logged with signatures, calldata, and oracle inputs so they can be fed into Risc0 circuits.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Zero-knowledge proving</span>
+      <p className="usb-card__body">Risc0 generates proofs that the executed plan respected policies (capital limits, allowlists, timing windows).</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Sequenced delivery</span>
+      <p className="usb-card__body">MaldaLab’s ASMS ensures multi-chain steps commit in the right order and fall back gracefully if venues degrade.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Receipts & verification</span>
+      <p className="usb-card__body">Proofs and state diffs are published on-chain plus via APIs so wallets, auditors, and partners can verify outcomes.</p>
+    </div>
+  </div>
+</div>
+
+<div className="usb-section">
+  <h2>Security and roadmap</h2>
+  <ul className="usb-checklist">
+    <li>Independent auditors validate circuits, sequencer logic, and slashable commitments before mainnet.</li>
+    <li>Fallback mode allows users to force manual settlement if proofs or sequencing windows stall.</li>
+    <li>Future iterations add attestation markets so third parties can run provers and earn fees for supplying capacity.</li>
+  </ul>
+  <p>
+    We will publish deeper deep dives—including benchmark data and contract references—as components graduate from internal testnets.
+  </p>
+</div>

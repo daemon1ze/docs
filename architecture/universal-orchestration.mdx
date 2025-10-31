@@ -4,35 +4,34 @@ description: "Coordinating cross-chain borrowing and margin flows"
 ---
 
 <div className="usb-section">
-  <h2>What orchestration solves</h2>
-  <ul className="usb-checklist">
-    <li>Define the problem traders face when juggling borrow venues manually.</li>
-    <li>Outline how USB.Trade abstracts rate shopping, approvals, and settlement.</li>
-    <li>Clarify trust assumptions and transparency expectations for orchestrated actions.</li>
-  </ul>
-  :::note Graphic cue
-  Dynamic animation showing USB.Trade evaluating lending rates across chains, selecting the best route, and executing the borrow + margin move.
-  :::
+  <h2>Role in the stack</h2>
+  <p>
+    The orchestration layer is USB.Trade’s command center. It ingests a trader’s high-level intent—fund this venue, rotate collateral, deleverage—and produces the concrete sequence of swaps, bridges, borrows, and repayments required to make it happen safely across chains.
+  </p>
+  <p>
+    By centralizing this logic we remove repetitive setup work while guaranteeing deterministic, auditable execution. Every plan USB forms can be replayed from public data and policy settings.
+  </p>
 </div>
 
 <div className="usb-section">
-  <h2>Core capabilities to describe</h2>
+  <h2>Core capabilities</h2>
   <ol>
-    <li><strong>Market discovery engine</strong> – how rate data is sourced, refreshed, and ranked.</li>
-    <li><strong>Intent translation</strong> – how a user’s deposit or rebalance request is converted into multi-step transactions.</li>
-    <li><strong>Execution coordinator</strong> – sequencing swaps, bridges, borrows, and margin updates across chains.</li>
-    <li><strong>Verification + receipts</strong> – providing post-trade proof (on-chain events, Risc0 attestations, dashboards).</li>
+    <li><strong>Discovery.</strong> Continuously samples borrow rates, liquidity depth, and venue risk flags through partner APIs and on-chain data.</li>
+    <li><strong>Intent translation.</strong> Combines user preferences, treasury rules, and current exposures into executable transaction graphs.</li>
+    <li><strong>Execution coordination.</strong> Streams multi-chain transactions to the sequencing layer with retry and rollback logic for partial fills.</li>
+    <li><strong>Receipts & telemetry.</strong> Emits structured events so downstream systems and auditors can verify every leg of the journey.</li>
   </ol>
-  <p>Leave room to plug in examples for ETH, stables, and long-tail assets once routes are finalized.</p>
 </div>
 
 <div className="usb-section">
-  <h2>Operational considerations</h2>
+  <h2>Operational guardrails</h2>
   <ul className="usb-checklist">
-    <li>Latency expectations per chain / venue.</li>
-    <li>Failover paths when a selected venue becomes unavailable mid-flight.</li>
-    <li>Fee structure (protocol share vs. pass-through gas / bridge costs).</li>
-    <li>Governance hooks for adding / removing supported venues.</li>
+    <li>Plans are simulated with slippage tolerances and liquidity ceilings before touching production routers.</li>
+    <li>Fallback routes and unwind paths are precomputed so changing venue states never trap capital.</li>
+    <li>Fees are itemized—gas, bridge tolls, protocol spreads—and attached to receipts for accounting clarity.</li>
+    <li>Venue activation, parameter changes, and emergency pauses are governed through on-chain policy modules.</li>
   </ul>
-  <p>Collect engineering references, API docs, or flowcharts here as they are produced.</p>
+  <p>
+    Upcoming work adds support for intent-level APIs so external strategists can program orchestration flows directly.
+  </p>
 </div>

@@ -1,0 +1,31 @@
+---
+title: "Funding"
+description: "Deposit collateral, unlock best borrow routes, and fuel execution"
+---
+
+<div className="usb-section">
+  <h2>Deposit collateral</h2>
+  <p>
+    Funding starts by seeding the smart margin account with approved assets. USB.Trade handles bridging, wrapping, and approvals so teams can concentrate on allocation decisions rather than plumbing.
+  </p>
+  <ul className="usb-checklist">
+    <li>Bridge assets from origin chains using preferred routes or USB-recommended bridges with failover paths.</li>
+    <li>Approve vault contracts to move collateral; confirm receipt hashes and reconcile balances.</li>
+    <li>Tag deposits by strategy or desk to keep downstream reporting tidy.</li>
+  </ul>
+</div>
+
+<div className="usb-section">
+  <h2>Source optimal borrow</h2>
+  <p>
+    After deposits clear, USB.Trade’s orchestration layer surveys partner markets to secure the best borrow terms for your target positions. Rate discovery and intent routing are automated, but policies still dictate what is permissible.
+  </p>
+  <ol>
+    <li>Review proposed borrow plans—venues, rates, utilization, and execution cost—for treasury approval.</li>
+    <li>Execute intent; USB.Trade sequences swaps, borrows, and transfers, emitting receipts at every step.</li>
+    <li>Confirm borrowed funds arrive in the correct sub-accounts (e.g., Hyperliquid USDC margin wallet).</li>
+  </ol>
+  <p>
+    With collateral and borrow power live, traders can move on to configuring automated safeguards.
+  </p>
+</div>

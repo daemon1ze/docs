@@ -1,0 +1,31 @@
+---
+title: "Repay & Withdraw"
+description: "Close borrow loops, release capital, and document outcomes"
+---
+
+<div className="usb-section">
+  <h2>Manage repayment flows</h2>
+  <p>
+    When exposures unwind or policy dictates deleveraging, USB.Trade orchestrates repayments across venues while respecting rate and liquidity considerations. You stay in control of timing and approvals.
+  </p>
+  <ul className="usb-checklist">
+    <li>Initiate a repay intent specifying which borrow legs to close and acceptable slippage / fees.</li>
+    <li>Review the proposed route: asset sales, bridge hops, and venue settlement order.</li>
+    <li>Approve execution and monitor receipts to confirm outstanding debt returns to zero.</li>
+  </ul>
+</div>
+
+<div className="usb-section">
+  <h2>Withdraw or re-route collateral</h2>
+  <p>
+    After liabilities settle, teams can withdraw capital back to treasury wallets or reassign it to new strategies. USB.Trade ensures vault health remains within policy, even as balances exit.
+  </p>
+  <ol>
+    <li>Request withdrawal amount, destination chain, and receiving wallet signatures.</li>
+    <li>Automations verify sufficient buffers remain; if not, they surface remediation steps.</li>
+    <li>Record withdrawal proofs and update strategy reporting so stakeholders see capital redeployment.</li>
+  </ol>
+  <p>
+    Closing the loop with clean repayment and withdrawals keeps operational hygiene tight and sets the stage for the next cycle of onboarding and funding.
+  </p>
+</div>

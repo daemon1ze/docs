@@ -1,0 +1,45 @@
+---
+title: "Automation Engine"
+description: "Policy-driven monitoring and intervention"
+---
+
+<div className="usb-section">
+  <h2>Mandate</h2>
+  <p>
+    The automation engine acts as the always-on operator for every smart margin account. It watches utilization, funding rates, oracle feeds, and venue health to trigger rebalances that keep exposure inside policy. Automation never assumes ownership of funds; it submits transactions through pre-approved executors and produces receipts signed by the proof layer.
+  </p>
+</div>
+
+<div className="usb-section">
+  <h2>Modules</h2>
+  <div className="usb-grid">
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Health monitor</span>
+      <p className="usb-card__body">Streams collateral ratios, borrow utilization, and liquidation buffers; escalates alerts through webhooks and in-app notifications.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Margin shifter</span>
+      <p className="usb-card__body">Reallocates collateral between venues or chains when policy thresholds drift, accounting for gas and bridge costs.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Borrow optimizer</span>
+      <p className="usb-card__body">Re-shops borrow positions when cheaper or safer liquidity appears, coordinating with the orchestration layer.</p>
+    </div>
+    <div className="usb-card">
+      <span className="usb-card__eyebrow">Failsafe actions</span>
+      <p className="usb-card__body">Executes predefined deleveraging or hedging routines when markets move violently or data sources degrade.</p>
+    </div>
+  </div>
+</div>
+
+<div className="usb-section">
+  <h2>Configuration & transparency</h2>
+  <ul className="usb-checklist">
+    <li>Accounts choose between default policies and granular parameter sets (per-asset buffers, notification channels, automation scopes).</li>
+    <li>Every automated transaction emits a signed report with before/after metrics so analysts can reconcile impact.</li>
+    <li>Institutions can require multi-sig approvals or staged rollouts before automation modules activate.</li>
+  </ul>
+  <p>
+    Longer term we will expose automation hooks so partners can run specialized modules (e.g., hedging options) under the same proof and custody framework.
+  </p>
+</div>

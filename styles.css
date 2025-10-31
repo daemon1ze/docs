@@ -1,10 +1,23 @@
 :root {
   --usb-blue: #2e5cff;
-  --usb-green: #00ff7f;
-  --usb-deep-navy: #060b1a;
+  --usb-green: #24e5a5;
+  --usb-deep-navy: #102452;
   --usb-metal: rgba(255, 255, 255, 0.24);
   --usb-metal-dark: rgba(26, 36, 68, 0.65);
   --usb-offwhite: #f4f8ff;
+  --color-bg: var(--usb-offwhite);
+  --color-surface: #ffffff;
+  --color-surface-strong: #edf3ff;
+  --color-border: rgba(46, 92, 255, 0.16);
+  --color-accent: var(--usb-blue);
+}
+
+[data-theme='dark'] {
+  --color-bg: #0c1a3d;
+  --color-surface: rgba(13, 26, 56, 0.92);
+  --color-surface-strong: rgba(15, 30, 64, 0.96);
+  --color-border: rgba(69, 110, 210, 0.42);
+  --color-accent: var(--usb-green);
 }
 
 html,
@@ -12,21 +25,32 @@ body {
   min-height: 100%;
 }
 
+html {
+  background-color: #0a1f4b !important;
+}
+
+html[data-theme='light'] {
+  background-color: var(--usb-offwhite) !important;
+}
+
 body {
   margin: 0;
-  background: radial-gradient(160% 140% at 85% -20%, rgba(0, 255, 127, 0.12) 0%, rgba(46, 92, 255, 0.12) 35%, rgba(6, 11, 26, 0.88) 100%);
-  color: rgba(231, 240, 255, 0.9);
+  background: radial-gradient(165% 145% at 80% -20%, rgba(36, 229, 165, 0.18) 0%, rgba(46, 92, 255, 0.32) 28%, #0a1f4b 85%) !important;
+  background-color: #0a1f4b !important;
+  color: rgba(225, 236, 255, 0.92);
   transition: background 0.35s ease, color 0.35s ease;
 }
 
 html[data-theme='light'] body {
-  background: radial-gradient(140% 120% at 80% -15%, rgba(46, 92, 255, 0.18) 0%, rgba(0, 255, 127, 0.18) 40%, var(--usb-offwhite) 82%);
+  background: radial-gradient(140% 120% at 80% -15%, rgba(46, 92, 255, 0.26) 0%, rgba(36, 229, 165, 0.2) 38%, var(--usb-offwhite) 80%) !important;
+  background-color: var(--usb-offwhite) !important;
   color: rgba(10, 18, 30, 0.92);
 }
 
 html[data-theme='dark'] body {
-  background: radial-gradient(130% 120% at 85% -10%, rgba(46, 92, 255, 0.4) 0%, rgba(0, 255, 127, 0.18) 30%, #040612 85%);
-  color: rgba(231, 240, 255, 0.9);
+  background: radial-gradient(130% 120% at 75% -10%, rgba(46, 92, 255, 0.44) 0%, rgba(36, 229, 165, 0.24) 26%, #0c1a3d 82%) !important;
+  background-color: #0c1a3d !important;
+  color: rgba(225, 236, 255, 0.92);
 }
 
 a {
@@ -38,16 +62,28 @@ html[data-theme='dark'] a {
 }
 
 ::selection {
-  color: #050812;
-  background: rgba(0, 255, 127, 0.55);
+  color: rgba(236, 246, 255, 0.95);
+  background: rgba(46, 92, 255, 0.5);
+}
+
+#__next,
+.mintlify-app,
+.mintlify-layout,
+.mintlify-root,
+.mintlify-page,
+.mintlify-content,
+.mintlify-wrapper,
+main {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 header,
 .mintlify-navbar,
 nav[role='navigation'] {
-  background: linear-gradient(120deg, rgba(6, 11, 26, 0.8) 0%, rgba(16, 24, 48, 0.85) 65%, rgba(46, 92, 255, 0.2) 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 26px rgba(6, 12, 30, 0.35);
+  background: linear-gradient(120deg, rgba(8, 20, 51, 0.86) 0%, rgba(18, 34, 70, 0.88) 60%, rgba(46, 92, 255, 0.28) 100%);
+  border-bottom: 1px solid rgba(62, 96, 180, 0.28);
+  box-shadow: 0 4px 26px rgba(6, 14, 40, 0.42);
   backdrop-filter: blur(14px);
 }
 
@@ -62,8 +98,8 @@ html[data-theme='light'] nav[role='navigation'] {
 aside,
 .mintlify-sidebar,
 .mintlify-menu {
-  background: linear-gradient(160deg, rgba(6, 12, 28, 0.92) 0%, rgba(8, 14, 34, 0.85) 45%, rgba(46, 92, 255, 0.22) 100%);
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(160deg, rgba(8, 18, 44, 0.95) 0%, rgba(9, 23, 58, 0.88) 45%, rgba(46, 92, 255, 0.28) 100%);
+  border-right: 1px solid rgba(62, 96, 180, 0.24);
   box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
 }
@@ -74,12 +110,6 @@ html[data-theme='light'] .mintlify-menu {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 248, 255, 0.92) 45%, rgba(46, 92, 255, 0.14) 100%);
   border-right: 1px solid rgba(46, 92, 255, 0.15);
   box-shadow: inset -1px 0 0 rgba(46, 92, 255, 0.08);
-}
-
-main,
-.mintlify-content,
-.mintlify-page {
-  background: transparent;
 }
 
 .mintlify-content pre,
@@ -116,7 +146,7 @@ html[data-theme='light'] .mintlify-content table {
 }
 
 html[data-theme='light'] .mintlify-content table th {
-  background: rgba(46, 92, 255, 0.14);
+  background: rgba(46, 92, 255, 0.18);
   color: rgba(12, 22, 40, 0.92);
 }
 
@@ -135,10 +165,10 @@ html[data-theme='dark'] {
   gap: 1.25rem;
   padding: 3.5rem clamp(2rem, 6vw, 4.5rem);
   border-radius: 32px;
-  background: radial-gradient(120% 120% at 80% -20%, rgba(0, 255, 127, 0.55) 0%, rgba(46, 92, 255, 0.9) 45%, #0b1020 100%);
-  color: #ecf6ff;
+  background: radial-gradient(120% 120% at 80% -20%, rgba(36, 229, 165, 0.48) 0%, rgba(46, 92, 255, 0.9) 42%, #09163a 100%);
+  color: #f0f7ff;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 30px 70px rgba(11, 16, 32, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(9, 20, 52, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
 
@@ -151,7 +181,7 @@ html[data-theme='dark'] {
 }
 
 [data-theme='light'] .usb-hero {
-  background: radial-gradient(120% 120% at 90% -10%, rgba(0, 255, 127, 0.35) 0%, rgba(46, 92, 255, 0.85) 45%, #0b1020 100%);
+  background: radial-gradient(120% 120% at 90% -10%, rgba(36, 229, 165, 0.35) 0%, rgba(46, 92, 255, 0.85) 45%, #0b1f4a 100%);
   color: #f6fbff;
 }
 
@@ -196,8 +226,8 @@ html[data-theme='dark'] {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background: rgba(6, 16, 38, 0.35);
-  color: #bfffe6;
+  background: rgba(9, 22, 48, 0.42);
+  color: #d4fff2;
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(6px);
 }
@@ -208,7 +238,7 @@ html[data-theme='dark'] {
   height: 0.65rem;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--usb-green), rgba(46, 92, 255, 0.85));
-  box-shadow: 0 0 12px rgba(0, 255, 127, 0.6);
+  box-shadow: 0 0 12px rgba(36, 229, 165, 0.6);
 }
 
 .usb-hero__note {
@@ -220,15 +250,15 @@ html[data-theme='dark'] {
   margin-top: 3.5rem;
   padding: 2.5rem clamp(1.5rem, 5vw, 3rem);
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(46, 92, 255, 0.12), rgba(0, 255, 127, 0.08));
-  border: 1px solid rgba(46, 92, 255, 0.15);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 20px 55px rgba(9, 14, 28, 0.25);
+  background: linear-gradient(135deg, rgba(46, 92, 255, 0.16), rgba(36, 229, 165, 0.12));
+  border: 1px solid rgba(46, 92, 255, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 55px rgba(9, 19, 45, 0.28);
   backdrop-filter: blur(14px);
 }
 
 [data-theme='light'] .usb-section {
-  background: linear-gradient(135deg, rgba(46, 92, 255, 0.08), rgba(0, 255, 127, 0.06));
-  border: 1px solid rgba(46, 92, 255, 0.12);
+  background: linear-gradient(135deg, rgba(46, 92, 255, 0.1), rgba(36, 229, 165, 0.08));
+  border: 1px solid rgba(46, 92, 255, 0.16);
 }
 
 .usb-section h2 {
@@ -264,7 +294,7 @@ html[data-theme='dark'] {
   position: absolute;
   left: 0;
   top: 0;
-  color: rgba(46, 92, 255, 0.75);
+  color: rgba(46, 92, 255, 0.78);
   font-weight: 600;
 }
 
@@ -278,13 +308,16 @@ html[data-theme='dark'] {
 .usb-card {
   padding: 1.75rem;
   border-radius: 22px;
-  background: rgba(12, 18, 36, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(234, 244, 255, 0.9);
+  background: rgba(11, 24, 52, 0.88);
+  border: 1px solid rgba(69, 110, 210, 0.32);
+  color: rgba(234, 244, 255, 0.92);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 [data-theme='light'] .usb-card {
@@ -293,11 +326,17 @@ html[data-theme='dark'] {
   color: rgba(17, 24, 39, 0.92);
 }
 
+.usb-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 40px rgba(9, 19, 45, 0.35);
+  border-color: rgba(69, 110, 210, 0.5);
+}
+
 .usb-card__eyebrow {
   font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(0, 255, 127, 0.75);
+  color: rgba(36, 229, 165, 0.78);
 }
 
 .usb-card__title {
