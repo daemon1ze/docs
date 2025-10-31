@@ -1,0 +1,43 @@
+---
+title: "Setting up Sentinels"
+description: "Step-by-step configuration for policy envelopes, modules, and receipts"
+---
+
+<div className="usb-section">
+  <h2>Step 1 · Define protection envelopes</h2>
+  <p>
+    Sentinels keep your USB.Trade positions inside the boundaries you mandate. Work through the on-screen prompts to translate governance policies into executable parameters covering health checks, leverage ceilings, and escalation flows.
+  </p>
+  <ul className="usb-checklist">
+    <li>Choose default templates or craft custom policies per strategy (e.g., delta-neutral vs. directional).</li>
+    <li>Set threshold triggers for LTV, funding rate drift, and venue risk signals that should fire alerts or actions.</li>
+    <li>Map escalation logic—who approves interventions, who receives notifications, and which channels you prefer.</li>
+  </ul>
+  <p><em>Screenshot placeholder: Policy template selection UI with threshold sliders.</em></p>
+</div>
+
+<div className="usb-section">
+  <h2>Step 2 · Activate sentinel modules</h2>
+  <p>
+    USB.Trade ships modular services for monitoring, rebalancing, and emergency responses. Enable the components that match your mandate and validate them with dry-run drills before allowing live intervention.
+  </p>
+  <ol>
+    <li>Enable health monitor, margin shifter, and borrow optimizer modules; review the actions each can trigger.</li>
+    <li>Run simulations with historical data or shadow balances to make sure sentinels behave as expected.</li>
+    <li>Finalize signer approvals so sentinel transactions can submit seamlessly while remaining auditable.</li>
+  </ol>
+  <p><em>Screenshot placeholder: Module activation list with simulation toggle.</em></p>
+</div>
+
+<div className="usb-section">
+  <h2>Step 3 · Review receipts and alerting</h2>
+  <p>
+    After modules are active, confirm that sentinels will surface the right context when they fire. The UI exposes delivery settings for receipts and alert severity—adjust them now so your downstream stakeholders know what to expect.
+  </p>
+  <ul className="usb-checklist">
+    <li>Set the delivery channels for sentinel receipts (webhooks, dashboards, email) and verify sample payloads.</li>
+    <li>Map severity levels to your incident cadence so high-priority actions escalate immediately.</li>
+    <li>Log the finalized configuration (screenshots + exported JSON) in your internal runbooks for audits.</li>
+  </ul>
+  <p><em>Screenshot placeholder: Sentinel receipt preview showing event payload.</em></p>
+</div>

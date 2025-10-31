@@ -1,5 +1,5 @@
 ---
-title: "Architecture Overview"
+title: "Overview"
 description: "How the core USB.Trade components fit together"
 ---
 
@@ -18,12 +18,12 @@ description: "How the core USB.Trade components fit together"
       <p className="usb-card__body">Intent-aware router that sequences swaps, bridges, borrows, and repayments for optimal funding.</p>
     </div>
     <div className="usb-card">
-      <span className="usb-card__eyebrow">Automation engine</span>
+      <span className="usb-card__eyebrow">Sentinel engine</span>
       <p className="usb-card__body">Monitoring and policy enforcement layer that keeps utilization and exposure within guardrails.</p>
     </div>
     <div className="usb-card">
       <span className="usb-card__eyebrow">Proof & sequencing layer</span>
-      <p className="usb-card__body">Risc0-bound proofs and MaldaLab sequencing ensure every automated action is verifiable.</p>
+      <p className="usb-card__body">Risc0-bound proofs and MaldaLab sequencing ensure every sentinel action is verifiable.</p>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ description: "How the core USB.Trade components fit together"
   <h2>Design tenets</h2>
   <ol>
     <li><strong>Composable interfaces.</strong> Every layer exposes APIs and events so partners can integrate or substitute modules.</li>
-    <li><strong>Deterministic automation.</strong> Decisions are reproducible from public data and programmable policies.</li>
+    <li><strong>Deterministic sentinels.</strong> Decisions are reproducible from public data and programmable policies.</li>
     <li><strong>Progressive decentralization.</strong> More controls migrate on-chain as cryptography, governance, and partner readiness mature.</li>
   </ol>
   <p>

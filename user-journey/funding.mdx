@@ -1,31 +1,46 @@
 ---
 title: "Funding"
-description: "Deposit collateral, unlock best borrow routes, and fuel execution"
+description: "Step-by-step flow for depositing collateral, sourcing borrow, and activating trading balances"
 ---
 
 <div className="usb-section">
-  <h2>Deposit collateral</h2>
+  <h2>Step 1 · Deposit collateral into your MMA</h2>
   <p>
-    Funding starts by seeding the smart margin account with approved assets. USB.Trade handles bridging, wrapping, and approvals so teams can concentrate on allocation decisions rather than plumbing.
+    From the Funding tab, follow the on-screen instructions to move approved assets into your Multichain Margin Account (MMA). The UI guides you through selecting source chains, bridges, and wrapping logic so you can focus on strategy instead of plumbing.
   </p>
   <ul className="usb-checklist">
-    <li>Bridge assets from origin chains using preferred routes or USB-recommended bridges with failover paths.</li>
-    <li>Approve vault contracts to move collateral; confirm receipt hashes and reconcile balances.</li>
-    <li>Tag deposits by strategy or desk to keep downstream reporting tidy.</li>
+    <li>Select which wallet and chain will fund the deposit, confirming gas estimates before submission.</li>
+    <li>Approve the MMA vault contracts when prompted and store the transaction hashes for reconciliation.</li>
+    <li>Tag each deposit with the intended desk or strategy to keep downstream reporting organized.</li>
   </ul>
+  <p><em>Screenshot placeholder: Funding tab showing deposit wizard and transaction summary.</em></p>
 </div>
 
 <div className="usb-section">
-  <h2>Source optimal borrow</h2>
+  <h2>Step 2 · Request the best borrow plan</h2>
   <p>
-    After deposits clear, USB.Trade’s orchestration layer surveys partner markets to secure the best borrow terms for your target positions. Rate discovery and intent routing are automated, but policies still dictate what is permissible.
+    Once collateral settles inside the MMA, USB.Trade surveys partner venues for the most efficient borrow route. Review the plan the interface proposes and adjust any guardrails (slippage, venue preferences) before approval.
   </p>
   <ol>
-    <li>Review proposed borrow plans—venues, rates, utilization, and execution cost—for treasury approval.</li>
-    <li>Execute intent; USB.Trade sequences swaps, borrows, and transfers, emitting receipts at every step.</li>
-    <li>Confirm borrowed funds arrive in the correct sub-accounts (e.g., Hyperliquid USDC margin wallet).</li>
+    <li>Inspect the borrow summary: rate quotes per venue, projected utilization, and sentinel fees.</li>
+    <li>Secure sign-off from treasury or governance if required, then execute the plan from the UI.</li>
+    <li>Track the execution receipts emitted for swaps, borrows, and transfers to confirm everything landed as expected.</li>
   </ol>
+  <p><em>Screenshot placeholder: Borrow plan approval screen with venue breakdown.</em></p>
+</div>
+
+<div className="usb-section">
+  <h2>Step 3 · Verify trading balances and alerts</h2>
   <p>
-    With collateral and borrow power live, traders can move on to configuring automated safeguards.
+    After the borrow completes, the orchestration layer routes capital to the designated trading venues (e.g., Hyperliquid) and updates MMA health metrics. Before moving on, confirm balances and enable alerts so you spot issues fast.
   </p>
+  <ul className="usb-checklist">
+    <li>Check that venue sub-accounts reflect the expected balances and that residual collateral remains in the MMA buffer.</li>
+    <li>Enable health alerts for utilization and borrow rate drift so funding changes trigger notifications immediately.</li>
+    <li>Document the final funding state (balances, receipts, screenshots) alongside your runbook for future reference.</li>
+  </ul>
+  <p>
+    With the MMA funded and trading balances live, continue to sentinel setup to keep the account within policy without manual babysitting.
+  </p>
+  <p><em>Screenshot placeholder: Post-funding dashboard showing venue balances and health metrics.</em></p>
 </div>

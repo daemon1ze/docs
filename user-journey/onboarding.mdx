@@ -1,31 +1,46 @@
 ---
 title: "Onboarding"
-description: "Create your multi-chain account and connect venues like Hyperliquid"
+description: "Step-by-step setup of your Multichain Margin Account (MMA) and venue connections"
 ---
 
 <div className="usb-section">
-  <h2>Establish the multi-chain account</h2>
+  <h2>Step 1 · Create your Multichain Margin Account (MMA)</h2>
   <p>
-    USB.Trade begins with a non-custodial, multi-chain margin account. Treasury and trading leads connect their signer wallets, assign roles, and import governance policies so downstream automation respects organizational guardrails.
+    Start by spinning up your MMA. Follow the on-screen instructions to connect the wallets that will control the account, then walk through the policy prompts so USB.Trade can enforce your governance rules automatically.
   </p>
   <ul className="usb-checklist">
-    <li>Connect cold + hot wallets and assign roles (trader, reviewer, automation approver, auditor).</li>
-    <li>Ingest treasury or desk policies covering allowed leverage, venue allowlists, and escalation rules.</li>
-    <li>Simulate account behavior using shadow balances to verify policy fit before funds move.</li>
+    <li>Connect cold and hot wallets, assigning roles for yourself (trader), reviewers, sentinel approvers, and auditors.</li>
+    <li>Enter baseline policy inputs (allowed leverage, venue allowlists, escalation contacts) so they populate MMA defaults.</li>
+    <li>Use the sandbox simulation toggle to preview how the MMA reacts to mock deposits before you proceed.</li>
   </ul>
+  <p><em>Screenshot placeholder: MMA creation modal with wallet and policy steps.</em></p>
 </div>
 
 <div className="usb-section">
-  <h2>Link trading venues</h2>
+  <h2>Step 2 · Finalize access & audit trails</h2>
   <p>
-    With account scaffolding in place, connect supported venues. Hyperliquid is the first-class integration: USB.Trade maps API keys, intent permissions, and settlement routes so automation can act without jeopardizing custody.
+    Before you connect venues, confirm that the right collaborators can observe or act on the account. The interface exposes invite prompts and webhook destinations—fill those in now so alerts and approvals land in the right channels later.
+  </p>
+  <ol>
+    <li>Add observers (e.g., finance or compliance) with read-only permissions.</li>
+    <li>Configure notification targets for health alerts and sentinel receipts (Slack, PagerDuty, email).</li>
+    <li>Export the generated policy summary PDF and store it alongside your internal controls documentation.</li>
+  </ol>
+  <p><em>Screenshot placeholder: Team access panel showing role assignments.</em></p>
+</div>
+
+<div className="usb-section">
+  <h2>Step 3 · Link trading venues</h2>
+  <p>
+    With the MMA defined, connect the venues you plan to orchestrate across. Follow the on-screen instructions in the “Connect Venues” panel to supply scoped API credentials for Hyperliquid and any additional exchanges or lending platforms.
   </p>
   <ul className="usb-checklist">
-    <li>Grant scoped API credentials for Hyperliquid and any additional exchanges or lending venues.</li>
-    <li>Verify venue health and sandbox connectivity before enabling production routes.</li>
-    <li>Record issuer, scopes, and renewal cadence for each credential inside your compliance workspace.</li>
+    <li>Generate venue credentials with minimal required scopes (trade, read balances) and paste them into the connector wizard.</li>
+    <li>Run the built-in connectivity test to confirm order routing and settlement webhooks succeed in sandbox mode.</li>
+    <li>Record issuer details, expiry dates, and renewal cadences in your compliance workspace for future audits.</li>
   </ul>
   <p>
-    Once venues are connected and policies approved, you are ready to move capital into the unified vault.
+    Once venues display a “Connected” badge, your MMA is ready for funding. Capture any remaining screenshots or notes here so future sessions are even faster.
   </p>
+  <p><em>Screenshot placeholder: Venue connection wizard highlighting Hyperliquid credentials.</em></p>
 </div>

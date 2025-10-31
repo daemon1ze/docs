@@ -26,20 +26,19 @@
           {
             "group": "User Journey",
             "pages": [
-              "user-journey/overview",
               "user-journey/onboarding",
               "user-journey/funding",
-              "user-journey/setting-up-automations",
+              "user-journey/setting-up-sentinels",
               "user-journey/repay-withdraw"
             ]
           },
           {
-            "group": "Technical Architecture",
+            "group": "Architecture & Guarantees",
             "pages": [
-              "architecture/overview",
+              "architecture/index",
               "architecture/universal-orchestration",
               "architecture/smart-margin-accounts",
-              "architecture/automation-engine",
+              "architecture/sentinel-engine",
               "architecture/proof-layer"
             ]
           },
